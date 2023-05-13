@@ -22,7 +22,7 @@ while True:
     print("2. Search by city")
     print("3. Quit")
 
-    user_choice = input("Enter your choice (1, 2, 3, or Q to quit): ").strip().lower()
+    user_choice = input("Enter your choice (1, 2, or 3 to quit): ").strip().lower()
 
     if user_choice == '1':
         zip_code = input("Please enter the zip code: ")
@@ -30,7 +30,7 @@ while True:
     elif user_choice == '2':
         city_name = input("Please enter the city name: ")
         url = base_url_by_city.format(CITY_NAME=city_name, API_KEY=api_key)
-    elif user_choice == '3' or user_choice == 'q':
+    elif user_choice == '3':
         print("Quitting...")
         exit()
     else:
