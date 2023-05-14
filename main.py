@@ -7,6 +7,7 @@ base_url_by_city = "http://api.openweathermap.org/data/2.5/weather?q={CITY_NAME}
 # Weather API Key
 api_key = '70d9c51e7360a54d4e27fc8462f05784'
 
+#def defines "city name" for API to retrieve via gelocation#
 def get_state(city_name):
     geolocation_url = f"http://api.openweathermap.org/geo/1.0/direct?q={city_name}&limit=1&appid={api_key}"
     response = requests.get(geolocation_url)
@@ -23,7 +24,7 @@ while True:
     print("3. Quit")
 
     user_choice = input("Enter your choice (1, 2, or 3 to quit): ").strip().lower()
-
+#User choice is selected by which num they enter, then search method is prompted#
     if user_choice == '1':
         zip_code = input("Please enter the zip code: ")
         url = f"http://api.openweathermap.org/data/2.5/weather?zip={zip_code},us&appid={api_key}&units=imperial"
